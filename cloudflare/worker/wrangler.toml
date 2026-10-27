@@ -1,0 +1,9 @@
+name = "manara-provisioning"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+# Secrets (set with `wrangler secret put`, never here):
+#   CF_API_TOKEN   zone API token for client certificates
+#
+# TODO(verify): KV or D1 binding for the site -> certificate registry.
+# TODO(verify): route, e.g. provision.manara.co.in, and whether it sits outside the mTLS rule.

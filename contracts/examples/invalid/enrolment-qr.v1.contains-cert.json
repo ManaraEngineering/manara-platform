@@ -1,0 +1,10 @@
+{
+  "schema": "manara.enrolment-qr/v1",
+  "site_id": "demo-villa",
+  "ha_url": "https://ha.demo-villa.manara.co.in",
+  "enrol_url": "https://enrol.demo-villa.manara.co.in/api/manara_home/enrol",
+  "device_profile": { "id": "living-room-tv", "version": 1 },
+  "one_time_code": "K7Q2M4XZP3T6W5RA",
+  "expires_at": "2026-10-27T10:10:00Z",
+  "client_certificate": "not allowed in a QR payload"
+}

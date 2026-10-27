@@ -1,0 +1,35 @@
+{
+  "schema": "manara.inventory/v1",
+  "site_id": "demo-villa",
+  "collected_at": "2026-10-27T02:00:00Z",
+  "items": [
+    {
+      "ref": "h-01",
+      "kind": "host",
+      "manufacturer": "Intel",
+      "model": "NUC11TNHi5",
+      "serial": "G6TN12345678",
+      "os": "Home Assistant OS",
+      "os_version": "16.2",
+      "cpu_model": "Intel Core i5-1135G7",
+      "memory_mb": 16384,
+      "storage_gb": 512
+    },
+    {
+      "ref": "tv-01",
+      "kind": "tv",
+      "manufacturer": "Toshiba",
+      "model": "TODO(verify) model",
+      "os": "Android TV",
+      "os_version": "11",
+      "app_version": "2026.10.1-manara.1"
+    },
+    {
+      "ref": "zc-01",
+      "kind": "zigbee_coordinator",
+      "manufacturer": "Nabu Casa",
+      "model": "ZBT-1",
+      "firmware_version": "7.4.4.0"
+    }
+  ]
+}

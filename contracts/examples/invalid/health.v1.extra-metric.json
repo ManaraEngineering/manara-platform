@@ -1,0 +1,9 @@
+{
+  "schema": "manara.health/v1",
+  "site_id": "demo-villa",
+  "source": "ha_integration",
+  "collected_at": "2026-10-27T10:05:00Z",
+  "groups": {
+    "home_assistant": { "version": "2026.10.2", "living_room_temperature": 23.5 }
+  }
+}

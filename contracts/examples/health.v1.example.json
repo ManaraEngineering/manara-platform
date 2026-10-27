@@ -1,0 +1,34 @@
+{
+  "schema": "manara.health/v1",
+  "site_id": "demo-villa",
+  "source": "ha_integration",
+  "host_ref": "h-01",
+  "collected_at": "2026-10-27T10:05:00Z",
+  "groups": {
+    "host": {
+      "cpu_percent": 12.5,
+      "memory_percent": 48.0,
+      "disk_percent": 31.2,
+      "uptime_s": 864000,
+      "load_1m": 0.42,
+      "cpu_temp_c": 51.0
+    },
+    "home_assistant": {
+      "version": "2026.10.2",
+      "integration_count": 34,
+      "entity_count": 812,
+      "unavailable_entity_count": 3,
+      "last_backup_age_s": 43200,
+      "manara_home_version": "0.0.1"
+    },
+    "connectivity": { "tunnel_connected": true, "ingest_rtt_ms": 38, "wan_up": true },
+    "fleet": {
+      "enrolled_count": 6,
+      "online_count": 5,
+      "cert_expiring_30d_count": 0,
+      "app_versions": { "2026.10.1-manara.1": 6 }
+    },
+    "buffer": { "queued_payloads": 0, "oldest_queued_age_s": 0 },
+    "support": { "maintainer_enabled": false }
+  }
+}

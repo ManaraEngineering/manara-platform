@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the Manara host collector every minute
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=60s
+RandomizedDelaySec=10s
+Unit=manara-collector.service
+
+[Install]
+WantedBy=timers.target

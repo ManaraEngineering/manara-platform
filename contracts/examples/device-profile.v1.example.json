@@ -1,0 +1,15 @@
+{
+  "schema": "manara.device-profile/v1",
+  "id": "living-room-tv",
+  "version": 1,
+  "display_name": "Living room TV",
+  "class": "tv",
+  "tier": "residential",
+  "default_view": "/dashboard-tv/home",
+  "kiosk": { "enabled": true, "hide_navigation": true, "keep_screen_on": true },
+  "tv_dashboards": [
+    { "id": "home", "title": "Home", "path": "/dashboard-tv/home" },
+    { "id": "cameras", "title": "Cameras", "path": "/dashboard-tv/cameras" },
+    { "id": "energy", "title": "Energy", "path": "/dashboard-tv/energy" }
+  ]
+}

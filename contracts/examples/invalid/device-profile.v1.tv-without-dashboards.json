@@ -1,0 +1,8 @@
+{
+  "schema": "manara.device-profile/v1",
+  "id": "bare-tv",
+  "version": 1,
+  "class": "tv",
+  "default_view": "/dashboard-tv/home",
+  "kiosk": { "enabled": true }
+}

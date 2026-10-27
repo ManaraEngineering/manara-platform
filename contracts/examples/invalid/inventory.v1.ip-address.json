@@ -1,0 +1,8 @@
+{
+  "schema": "manara.inventory/v1",
+  "site_id": "demo-villa",
+  "collected_at": "2026-10-27T02:00:00Z",
+  "items": [
+    { "ref": "h-01", "kind": "host", "ip_address": "192.168.1.10", "hostname": "johns-server" }
+  ]
+}
