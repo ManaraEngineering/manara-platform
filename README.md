@@ -22,7 +22,9 @@ Source of truth for the Manara platform: architecture, decisions (ADRs), shared 
 - `develop` is the default branch; all work lands here by PR.
 - `main` is stable; changes arrive by PR from `develop` and CI must pass.
 
-TODO: `main` is not protected yet. GitHub Free does not allow branch protection on private repos. Once the account is on GitHub Pro (or the repos move to a paid org), require a PR and the `contracts`, `markdown` and `secrets` checks on `main`. Until then, follow the rule by convention: no direct pushes to `main`.
+`main` is protected: it requires a PR, and the `contracts`, `markdown` and `secrets` checks must pass.
+
+The repos are public until the MVP. Going private on GitHub Free removes branch protection, so before switching back, upgrade to GitHub Pro or move the repos to a paid org.
 
 ## Local setup
 
