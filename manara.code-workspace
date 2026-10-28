@@ -3,7 +3,8 @@
   // Manara repos side by side. Paths are relative to manara-platform/.
   "folders": [
     { "name": "manara-platform", "path": "." },
-    { "name": "manara-home-integration", "path": "../manara-home-integration" }
+    { "name": "manara-home-integration", "path": "../manara-home-integration" },
+    { "name": "manara-home-android", "path": "../manara-home-android" }
   ],
   "settings": {
     "files.eol": "\n",
@@ -61,6 +62,20 @@
         "options": { "cwd": "${workspaceFolder:manara-home-integration}" },
         "problemMatcher": [],
         "group": { "kind": "test", "isDefault": true }
+      },
+      {
+        "label": "android: assemble minimal debug",
+        "type": "shell",
+        "command": ".\\gradlew.bat :app:assembleMinimalDebug",
+        "options": {
+          "cwd": "${workspaceFolder:manara-home-android}",
+          "env": {
+            "JAVA_HOME": "C:\\Program Files\\Android\\Android Studio\\jbr",
+            "GRADLE_USER_HOME": "D:\\SoftwareDev\\.gradle"
+          }
+        },
+        "problemMatcher": [],
+        "group": "build"
       },
       {
         "label": "integration: sync contracts from platform",
