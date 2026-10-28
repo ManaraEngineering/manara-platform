@@ -1,0 +1,84 @@
+{
+  // Open this file in Antigravity (File > Open Workspace from File) to get all
+  // Manara repos side by side. Paths are relative to manara-platform/.
+  "folders": [
+    { "name": "manara-platform", "path": "." },
+    { "name": "manara-home-integration", "path": "../manara-home-integration" }
+  ],
+  "settings": {
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/.mypy_cache": true,
+      "**/.ruff_cache": true
+    },
+    "editor.formatOnSave": true,
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.codeActionsOnSave": { "source.organizeImports": "explicit" }
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    // Live validation of contract examples while editing.
+    "json.schemas": [
+      { "fileMatch": ["**/contracts/examples/enrolment-qr.v1*.json"], "url": "./contracts/enrolment-qr.v1.json" },
+      { "fileMatch": ["**/contracts/examples/device-profile.v1*.json"], "url": "./contracts/device-profile.v1.json" },
+      { "fileMatch": ["**/contracts/examples/health.v1*.json"], "url": "./contracts/health.v1.json" },
+      { "fileMatch": ["**/contracts/examples/inventory.v1*.json"], "url": "./contracts/inventory.v1.json" }
+    ],
+    // Home Assistant does not install on Windows; integration tests run in WSL (see tasks).
+    "python.testing.pytestEnabled": false
+  },
+  "extensions": {
+    "recommendations": [
+      "charliermarsh.ruff",
+      "ms-python.python",
+      "redhat.vscode-yaml",
+      "DavidAnson.vscode-markdownlint",
+      "bierner.markdown-mermaid",
+      "vscjava.vscode-gradle"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "platform: validate contracts",
+        "type": "shell",
+        "command": "python scripts/validate_contracts.py",
+        "options": { "cwd": "${workspaceFolder:manara-platform}" },
+        "problemMatcher": [],
+        "group": "test"
+      },
+      {
+        "label": "integration: lint + typecheck + test (WSL)",
+        "type": "shell",
+        "command": "wsl -e bash scripts/check.sh",
+        "options": { "cwd": "${workspaceFolder:manara-home-integration}" },
+        "problemMatcher": [],
+        "group": { "kind": "test", "isDefault": true }
+      },
+      {
+        "label": "integration: sync contracts from platform",
+        "type": "shell",
+        "command": "python scripts/sync_contracts.py ../manara-platform",
+        "options": { "cwd": "${workspaceFolder:manara-home-integration}" },
+        "problemMatcher": []
+      },
+      {
+        "label": "all: pre-commit",
+        "type": "shell",
+        "command": "python -m pre_commit run --all-files",
+        "options": {
+          "cwd": "${fileWorkspaceFolder}",
+          "env": { "VIRTUALENV_OVERRIDE_APP_DATA": "${env:USERPROFILE}\\.cache\\venvdata" }
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}

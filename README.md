@@ -32,4 +32,8 @@ pre-commit install
 python scripts/validate_contracts.py
 ```
 
+### IDE
+
+Open [manara.code-workspace](manara.code-workspace) in Antigravity or VS Code (File → Open Workspace from File). It opens every Manara repo, assuming they're cloned side by side, and adds recommended extensions, live schema validation for contract examples, and tasks for each repo's checks (Terminal → Run Task). Agent instructions are in each repo's `AGENTS.md`.
+
 Never commit secrets: tokens, keys, certificates, keystores or `.env` files. Gitleaks runs as a pre-commit hook and in CI.
